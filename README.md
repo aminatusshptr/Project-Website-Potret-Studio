@@ -63,7 +63,7 @@ Project_Studio_Foto_Website/
 └── README.md
 ```
 ## PREVIEW WEBSITE
-![Potret Studio Website Preview](Home 1.png)
+![Potret Studio Website Preview](Home 3 - Testi.png)
 
 ---
 
@@ -105,4 +105,5 @@ Kamu bebas memodifikasi, menyalin, atau mengembangkan lebih lanjut dengan menyer
 ---
 
 ✨ *"Fotografi adalah cara untuk menangkap momen yang tak bisa diulang — dan website ini adalah cara untuk memperkenalkannya ke dunia."* ✨
+
 
