@@ -73,7 +73,10 @@ Project_Studio_Foto_Website/
 4. Website akan terbuka di browser pilihan kamu (disarankan: Chrome, Edge, atau Firefox).  
 5. Pastikan seluruh file gambar dan CSS tetap berada di struktur folder yang sama agar tampilan berfungsi sempurna.
 
----
+------
+[![Tonton Demo di YouTube](https://img.youtube.com/vi/rpsWr7cjPVQ/0.jpg)](https://youtu.be/rpsWr7cjPVQ?si=WlFvikVUHNrbIvfo) 
+------
+
 
 ## 🧩 Fitur yang Dapat Dikembangkan
 
@@ -103,6 +106,7 @@ Kamu bebas memodifikasi, menyalin, atau mengembangkan lebih lanjut dengan menyer
 ---
 
 ✨ *"Fotografi adalah cara untuk menangkap momen yang tak bisa diulang — dan website ini adalah cara untuk memperkenalkannya ke dunia."* ✨
+
 
 
 
