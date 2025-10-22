@@ -34,7 +34,7 @@ Website ini dibuat menggunakan teknologi web dasar, dengan struktur yang mudah d
 
 - **HTML5** – Menyusun struktur halaman
 - **CSS3** – Mendesain tampilan dan tata letak
-- **JavaScript** – Menambahkan interaksi sederhana (jika digunakan)
+- **JavaScript** – Menambahkan interaksi sederhana
 - **Bootstrap Framework** – Membantu tampilan responsif di berbagai ukuran layar
 - **Gambar & Mockup (.png)** – Untuk visualisasi halaman dan konten website
 
@@ -69,7 +69,7 @@ Project_Studio_Foto_Website/
 
 1. **Ekstrak** file ZIP proyek ini.  
 2. Buka folder `Project_Studio Foto Website/`.  
-3. Klik dua kali pada file `home.html` atau `index.html` (jika ada).  
+3. Klik dua kali pada file `home.html` atau `index.html`.  
 4. Website akan terbuka di browser pilihan kamu (disarankan: Chrome, Edge, atau Firefox).  
 5. Pastikan seluruh file gambar dan CSS tetap berada di struktur folder yang sama agar tampilan berfungsi sempurna.
 
@@ -103,6 +103,7 @@ Kamu bebas memodifikasi, menyalin, atau mengembangkan lebih lanjut dengan menyer
 ---
 
 ✨ *"Fotografi adalah cara untuk menangkap momen yang tak bisa diulang — dan website ini adalah cara untuk memperkenalkannya ke dunia."* ✨
+
 
 
 
