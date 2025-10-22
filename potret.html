@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Potret Collection | Studio Gallery</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+    <style>
+    /* =============================== */
+    /* 🌸 GLOBAL SETTINGS */
+    body {
+        background-color: #fff0f6; /* pastel pink lembut */
+        font-family: 'Quicksand', 'Poppins', sans-serif;
+        color: #333;
+        margin: 0;
+        padding: 0;
+        scroll-behavior: smooth;
+    }
+
+    /* =============================== */
+    /* 🌈 NAVBAR */
+    .navbar {
+        transition: all 0.3s ease;
+        background: linear-gradient(90deg, #ffd6e0, #a6c1ee); /* pastel gradient */
+        box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+        border-radius: 0 0 15px 15px;
+    }
+
+    .navbar.scrolled {
+        background-color: #fff !important;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+    }
+
+    /* Navbar links cute hover */
+    .navbar-nav .nav-link {
+        color: #333 !important;
+        font-weight: 600;
+        transition: all 0.3s ease;
+    }
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-link.active {
+        color: #ff6f91 !important;
+        transform: scale(1.1);
+    }
+
+    /* =============================== */
+    /* 🖼️ HERO SECTION */
+    .hero-section {
+        background: linear-gradient(to right, #e8f5e9, #fff0f6); /* pastel green ke pink */
+        padding: 6rem 2rem 4rem;
+        text-align: center;
+        border-radius: 20px;
+    }
+
+    .hero-section h1 {
+        font-weight: 700;
+        color: #ff4d6d;
+        font-size: 2.8rem;
+        margin-bottom: 1rem;
+    }
+
+    .hero-section p {
+        font-size: 1.1rem;
+        color: #555;
+        margin-bottom: 2rem;
+    }
+
+    /* =============================== */
+    /* 💚 BUTTONS */
+    .btn-pastel {
+        background: linear-gradient(90deg, #ffd6e0, #a6c1ee);
+        color: #fff;
+        border: none;
+        border-radius: 50px;
+        padding: 10px 25px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+    }
+
+    .btn-pastel:hover {
+        background: linear-gradient(90deg, #a6c1ee, #ffd6e0);
+        transform: translateY(-3px) scale(1.05);
+    }
+
+    /* =============================== */
+    /* 📸 GALLERY */
+    .gallery-img {
+        border-radius: 20px;
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+    .gallery-img:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 25px rgba(255,182,193,0.25);
+    }
+
+    /* =============================== */
+    /* 📘 FOOTER */
+    footer {
+        background: linear-gradient(90deg, #ffd6e0, #a6c1ee); /* pastel gradient */
+        color: #333;
+        padding: 2rem 0;
+        text-align: center;
+        font-weight: 600;
+        border-radius: 15px 15px 0 0;
+    }
+
+    footer a {
+        color: #333;
+        text-decoration: none;
+        font-weight: 600;
+    }
+    footer a:hover {
+        opacity: 0.7;
+    }
+
+    /* =============================== */
+    /* 📱 RESPONSIVE */
+    @media (max-width: 768px) {
+        .hero-section {
+            padding: 4rem 1rem 3rem;
+        }
+
+        .hero-section h1 {
+            font-size: 2.2rem;
+        }
+
+        .gallery-img {
+            width: 100%;
+            margin-bottom: 15px;
+        }
+    }
+    </style>
+
+</head>
+
+<body>
+  <!-- 🌈 Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top pastel-navbar">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">
+            <img src="Potret Studio.png" alt="logoku" height="60" class="me-2">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link text-white fw-semibold" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="gallery.html">Gallery</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="booking.html">Booking</a></li>
+        </ul>
+        </div>
+    </div>
+    </nav>
+
+  <!-- ================= HERO SECTION ================= -->
+  <section class="hero-section text-center mt-5">
+    <div class="container">
+      <p class="text-muted small mb-2">Gallery of Customer Photography</p>
+      <h1 class="fw-bold mb-3">Our Potret Collection</h1>
+      <p class="text-secondary mb-4">
+        Every portrait has a unique story and character. 
+        Here are some of the best works from our team.
+      </p>
+      <a href="index.html" class="btn btn-success rounded-pill px-4 py-2 shadow-sm">← Back to Home</a>
+    </div>
+  </section>
+
+  <!-- ================= GALLERY SECTION ================= -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card border-0 shadow-sm">
+            <img src="https://i.pinimg.com/1200x/80/a9/39/80a939f89b4c45d82bd1d2eb10551684.jpg" alt="Potret 1" class="card-img-top gallery-img rounded-3">
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card border-0 shadow-sm">
+            <img src="https://i.pinimg.com/736x/a7/b9/b9/a7b9b90bcfcb585e33bc8fec71c15f6c.jpg" class="card-img-top gallery-img rounded-3">
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card border-0 shadow-sm">
+            <img src="https://i.pinimg.com/736x/7c/f8/96/7cf8960a3dadce5dcfaee1ae5cc1fd39.jpg" alt="Potret 3" class="card-img-top gallery-img rounded-3">
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card border-0 shadow-sm">
+            <img src="https://i.pinimg.com/736x/e1/3c/a4/e13ca49cc2caa34ca107077aadd05748.jpg" alt="Potret 4" class="card-img-top gallery-img rounded-3">
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card border-0 shadow-sm">
+            <img src="https://i.pinimg.com/736x/e6/3a/95/e63a9578d87bf157f445e5c905f6c8d5.jpg" alt="Potret 5" class="card-img-top gallery-img rounded-3">
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card border-0 shadow-sm">
+            <img src="https://i.pinimg.com/736x/7c/3b/e4/7c3be477c168f96d9f44a57e974d720f.jpg" alt="Potret 6" class="card-img-top gallery-img rounded-3">
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card border-0 shadow-sm">
+            <img src="https://i.pinimg.com/736x/f9/4d/c1/f94dc163e457b66e41895ab1488ec451.jpg" alt="Potret 7" class="card-img-top gallery-img rounded-3">
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card border-0 shadow-sm">
+            <img src="https://i.pinimg.com/736x/20/c3/43/20c343fcac12bc63c653d7cf12e64b13.jpg" alt="Potret 8" class="card-img-top gallery-img rounded-3">
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card border-0 shadow-sm">
+            <img src="https://i.pinimg.com/736x/0c/4a/e9/0c4ae928ab0a141f4ca287031707a6ed.jpg" alt="Potret 9" class="card-img-top gallery-img rounded-3">
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card border-0 shadow-sm">
+            <img src="https://i.pinimg.com/736x/49/fc/29/49fc29d402e304156725c4439d7653a3.jpg" alt="Potret 10" class="card-img-top gallery-img rounded-3">
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card border-0 shadow-sm">
+            <img src="https://i.pinimg.com/736x/f7/d3/ea/f7d3eaaad8c5bb447dc11d3c1eeb422f.jpg" alt="Potret 11" class="card-img-top gallery-img rounded-3">
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card border-0 shadow-sm">
+            <img src="https://i.pinimg.com/736x/9f/cb/07/9fcb07118e479616b062fc2bdcdd8cd4.jpg" alt="Potret 12" class="card-img-top gallery-img rounded-3">
+          </div>
+        </div>
+
+                <div class="col-md-4">
+          <div class="card border-0 shadow-sm">
+            <img src="https://i.pinimg.com/736x/43/65/eb/4365eb01571b93782c98d4922fa7cc64.jpg" alt="Potret 13" class="card-img-top gallery-img rounded-3">
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card border-0 shadow-sm">
+            <img src="https://i.pinimg.com/736x/44/4d/86/444d86a67af1c1c59e8df93accd9dc40.jpg" alt="Potret 14" class="card-img-top gallery-img rounded-3">
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card border-0 shadow-sm">
+            <img src="https://i.pinimg.com/736x/2e/cc/59/2ecc59cc8e2a4cc0847d6d4d316b88ef.jpg" alt="Potret 15" class="card-img-top gallery-img rounded-3">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="text-center">
+    <div class="container">
+      <p class="mb-1">© 2025 Studio Gallery. All Rights Reserved.</p>
+      <small>Follow us on 
+        <a href="#" class="text-success text-decoration-none">Instagram</a>, 
+        <a href="#" class="text-success text-decoration-none">Facebook</a>, 
+        <a href="#" class="text-success text-decoration-none">TikTok</a>.
+      </small>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Navbar scroll effect
+    window.addEventListener("scroll", function() {
+      const navbar = document.querySelector(".navbar");
+      navbar.classList.toggle("scrolled", window.scrollY > 50);
+    });
+  </script>
+</body>
+</html>

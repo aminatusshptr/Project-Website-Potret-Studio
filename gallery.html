@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery | Potret Studio</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+  <style>
+    /* 🌈 Import Font */
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Comic+Neue:wght@400;700&display=swap');
+
+    body {
+      font-family: "Comic Neue", "Poppins", sans-serif;
+      background-color: #fdfbfb;
+      margin: 0;
+      padding: 0;
+      color: #444;
+    }
+
+    /* 🌸 Navbar pastel gradasi */
+    .navbar {
+      background: linear-gradient(90deg, #bde0fe, #ffc8dd);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .navbar-brand {
+      font-weight: 700;
+      color: #000 !important;
+      font-size: 1.4rem;
+      text-shadow: 0 1px 2px rgba(255,255,255,0.4);
+    }
+
+    .navbar-nav .nav-link {
+      color: #000 !important;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: #ff7bac !important;
+      transform: scale(1.05);
+    }
+
+    /* 🌷 Gallery Section */
+    .gallery-section {
+      padding: 100px 0 60px;
+      background-color: #fff;
+    }
+
+    /* 🌸 Card */
+    .card {
+      border: none;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+      background-color: #fff;
+      font-family: 'Comic Neue', cursive;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 25px rgba(255,182,193,0.3);
+    }
+
+    .card-title {
+      color: #333;
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+
+    .card-text {
+      color: #666;
+    }
+
+    /* 🌸 Tombol */
+    .btn-green {
+      background: linear-gradient(90deg, #a2d2ff, #ffc8dd);
+      color: #333;
+      border-radius: 8px;
+      border: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      font-family: "Poppins", sans-serif;
+    }
+
+    .btn-green:hover {
+      background: linear-gradient(90deg, #ffc8dd, #a2d2ff);
+      transform: translateY(-2px);
+    }
+
+    /* 🌷 Footer */
+    footer {
+      background: linear-gradient(90deg, #bde0fe, #ffc8dd);
+      color: #000;
+      text-align: center;
+      padding: 20px 0;
+      margin-top: 80px;
+      font-weight: 700;
+      font-family: "Poppins", sans-serif;
+    }
+
+    footer a {
+      color: #000;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    footer a:hover {
+      color: #ff7bac;
+    }
+
+    /* 🌸 Icon dalam card */
+    .icon {
+      background: linear-gradient(135deg, #bde0fe, #ffc8dd);
+      color: #fff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      width: 70px;
+      height: 70px;
+      margin-bottom: 15px;
+      font-size: 24px;
+    }
+
+    /* 🌸 Responsive */
+    @media (max-width: 768px) {
+      .navbar-brand {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 🌿 Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="Potret Studio.png" alt="logoku" height="60" class="me-2">
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="gallery.html" class="nav-link active text-success fw-semibold">Gallery</a></li>
+          <li class="nav-item"><a href="booking.html" class="nav-link">Booking</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+<!-- PAGE HEADER -->
+  <header class="page-header">
+    <div class="container">
+      <h1>Our Collections</h1>
+      <p class="text-muted">Select a collection or browse all — Camera gear and Studio background packages.</p>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT (both sections present, JS will show/hide depending on hash) -->
+  <main class="container">
+
+    <!-- Controls shown when a single collection is displayed -->
+    <div id="singleControls" class="text-center mb-3" style="display:none">
+      <div class="single-header">
+        <div class="badge-area" id="singleBadge">Collection</div>
+        <div>
+          <a id="showAllBtn" class="btn btn-outline-secondary btn-sm">Show all collections</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- CAMERA SECTION -->
+    <section id="camera" class="gallery-section">
+      <h2 class="section-title">Camera Collection</h2>
+      <div class="row g-4 justify-content-center">
+        <!-- item 1 -->
+        <div class="col-md-4">
+          <div class="card">
+            <img src="https://images.tokopedia.net/img/JFrBQq/2024/2/26/d434e3e2-2ed8-4346-9dc0-56cc594fee9f.jpg" alt="Canon EOS 6D Mark II">
+            <div class="card-body text-center">
+              <h5 class="mb-1">Canon EOS 6D Mark II</h5>
+              <p class="text-muted small mb-2">The Canon EOS 6D Mark II is a lightweight full-frame DSLR with a vari-angle screen, 
+                DIGIC 7 processor, high ISO range up to 102400, Full HD video recording with Movie Digital IS, Smooth Zone AF, 
+                and energy-efficient Wi-Fi, NFC, and Bluetooth connectivity</p>
+              <p class="fw-semibold text-success mb-3">Rp 350.000,00</p>
+              <div class="d-grid gap-2">
+                <a href="booking.html" class="btn btn-accent">Book / Rent</a>
+                <button class="btn btn-outline-secondary">Details</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- item 2 -->
+        <div class="col-md-4">
+          <div class="card">
+            <img src="https://images.tokopedia.net/img/JFrBQq/2024/2/26/1f52cac6-779e-449b-9352-e3332646a0f5.jpg" alt="Canon EOS 90D">
+            <div class="card-body text-center">
+              <h5 class="mb-1">Canon EOS 90D</h5>
+              <p class="text-muted small mb-2">The Canon EOS 90D is a high-performance mid-range DSLR featuring a 45-point cross-type AF, 
+                10fps continuous shooting, 4K video recording, an articulated LCD screen for flexible live view, 
+                and a DIGIC 8 processor supporting its 32MP sensor.</p>
+              <p class="fw-semibold text-success mb-3">Rp 500.000,00</p>
+              <div class="d-grid gap-2">
+                <a href="booking.html" class="btn btn-accent">Book / Rent</a>
+                <button class="btn btn-outline-secondary">Details</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- item 3 (example) -->
+        <div class="col-md-4">
+          <div class="card">
+            <img src="https://images.tokopedia.net/img/JFrBQq/2024/2/26/87362b9f-b0e0-4b2f-8813-3e5ac2b06c6b.jpg" alt="Nikon D780">
+            <div class="card-body text-center">
+              <h5 class="mb-1">Nikon D780</h5>
+              <p class="text-muted small mb-2">The Nikon D780 is a next-generation DSLR combining traditional DSLR and mirrorless technology, 
+                featuring a 24.5MP sensor, EXPEED 6 processor, high ISO sensitivity up to 204800, 
+                and real-time Eye-Detection AF.</p>
+              <p class="fw-semibold text-success mb-3">Rp 600.000,00</p>
+              <div class="d-grid gap-2">
+                <a href="booking.html" class="btn btn-accent">Book / Rent</a>
+                <button class="btn btn-outline-secondary">Details</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- item  4(example) -->
+        <div class="col-md-4">
+          <div class="card">
+            <img src="https://images.tokopedia.net/blog-tokopedia-com/uploads/2020/03/Canon-EOS-Rebel-SL2-696x696.jpg" alt="Canon EOS Rebel SL2">
+            <div class="card-body text-center">
+              <h5 class="mb-1">Canon EOS Rebel SL2</h5>
+              <p class="text-muted small mb-2">The Canon EOS 200D is a DSLR camera succeeding the Canon 1000D, 
+                featuring a 24.2 MP APS-C CMOS sensor and a DIGIC 7 image processor. 
+                With ISO sensitivity up to 25,600, 5fps continuous shooting, and Full HD 60fps video recording, 
+                this camera delivers sharp image quality and fast performance for both photography and videography needs.</p>
+              <p class="fw-semibold text-success mb-3">Rp 350.000,00</p>
+              <div class="d-grid gap-2">
+                <a href="booking.html" class="btn btn-accent">Book / Rent</a>
+                <button class="btn btn-outline-secondary">Details</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- item 5 (example) -->
+        <div class="col-md-4">
+          <div class="card">
+            <img src="https://i.rtings.com/assets/products/94IcCy6V/sony-rx100-vii/design-small.jpg?format=auto" alt="Sony RX100 VII">
+            <div class="card-body text-center">
+              <h5 class="mb-1">Sony RX100 VII</h5>
+              <p class="text-muted small mb-2">The Sony RX100 VII is one of the best compact cameras for street photography, 
+                featuring a built-in zoom lens. Similar in size to the RICOH GR III, 
+                it uses a smaller 1-inch stacked sensor that still delivers impressive image quality and supports 
+                ultra-fast 20fps burst shooting. Its versatile 24–200mm equivalent zoom lens provides excellent flexibility 
+                for capturing distant subjects with clarity and precision.</p>
+              <p class="fw-semibold text-success mb-3">Rp 500.000,00</p>
+              <div class="d-grid gap-2">
+                <a href="booking.html" class="btn btn-accent">Book / Rent</a>
+                <button class="btn btn-outline-secondary">Details</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- item 3 (example) -->
+        <div class="col-md-4">
+          <div class="card">
+            <img src="https://i.rtings.com/assets/products/CZIwnNpx/fujifilm-x100vi/design-small.jpg?format=auto" alt="Fujifilm X100VI">
+            <div class="card-body text-center">
+              <h5 class="mb-1">Fujifilm X100VI</h5>
+              <p class="text-muted small mb-2">The Fujifilm X100VI isn’t as compact or discreet as the RICOH GR III, 
+                but it offers a range of premium features you won’t find in other point-and-shoot cameras. 
+                Like the RICOH, it uses a large APS-C sensor, but with a much higher 40.2MP resolution, 
+                giving you greater flexibility for cropping and maintaining image detail.</p>
+              <p class="fw-semibold text-success mb-3">Rp 600.000</p>
+              <div class="d-grid gap-2">
+                <a href="booking.html" class="btn btn-accent">Book / Rent</a>
+                <button class="btn btn-outline-secondary">Details</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 📌 NOTE SECTION -->
+        <div class="note-section mt-5">
+          <div class="alert alert-warning border-0 shadow-sm" role="alert">
+            <strong>NOTE:</strong>
+            <ul class="mb-0 mt-2">
+              <li>Harga berlaku dengan masa sewa 1 hari.</li>
+              <li>Jaminan sewa kamera (KTP/SIM/KK) + Foto 4x6 + Foto dengan Unit.</li>
+              <li>Wajib mengisi Formulir Sewa dan Pernyataan Dokumen.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STUDIO SECTION -->
+    <section id="studio" class="gallery-section bg-light">
+      <div class="text-center mb-5">
+        <h2 class="fw-bold">Studio Background Collection</h2>
+        <p class="text-muted">Choose your favorite photo background with various themes and professional lighting.</p>
+      </div>
+      <div class="row g-4 justify-content-center">
+        <!-- Studio Set 1 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card shadow-sm border-0 h-100">
+            <img src="https://i.pinimg.com/736x/c6/59/c0/c659c0efe362ef8e109a025e38789dcf.jpg" alt="Flower Background P77" class="card-img-top rounded-top">
+            <div class="card-body text-center">
+              <h5 class="mb-1">Flower Background P77</h5>
+              <p class="text-muted small mb-3">Backdrop + props + lighting kit (1 set).</p>
+              <div class="d-grid gap-2">
+                <a href="booking.html" class="btn btn-accent">Book Now</a>
+                <button class="btn btn-outline-secondary">View Details</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Studio Set 2 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card shadow-sm border-0 h-100">
+            <img src="https://i.pinimg.com/736x/58/37/2d/58372dae72adc9b3c150130947a09953.jpg" alt="Abstract Background" class="card-img-top rounded-top">
+            <div class="card-body text-center">
+              <h5 class="mb-1">Abstract Background</h5>
+              <p class="text-muted small mb-3">Backdrop + props + lighting kit (1 set).</p>
+              <div class="d-grid gap-2">
+                <a href="booking.html" class="btn btn-accent">Book Now</a>
+                <button class="btn btn-outline-secondary">View Details</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Studio Set 3 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card shadow-sm border-0 h-100">
+            <img src="https://i.pinimg.com/1200x/d3/c0/42/d3c042e9e66581acac98add9e6ce5cd3.jpg" alt="Vintage Background" class="card-img-top rounded-top">
+            <div class="card-body text-center">
+              <h5 class="mb-1">Vintage Background</h5>
+              <p class="text-muted small mb-3">Backdrop + props + lighting kit (1 set).</p>
+              <div class="d-grid gap-2">
+                <a href="booking.html" class="btn btn-accent">Book Now</a>
+                <button class="btn btn-outline-secondary">View Details</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Studio Set 4 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card shadow-sm border-0 h-100">
+            <img src="https://i.pinimg.com/1200x/c6/d2/12/c6d2125cb1303d14ac9dbdb54ef89089.jpg" alt="Study Background" class="card-img-top rounded-top">
+            <div class="card-body text-center">
+              <h5 class="mb-1">Study Background</h5>
+              <p class="text-muted small mb-3">Backdrop + props + lighting kit (1 set).</p>
+              <div class="d-grid gap-2">
+                <a href="booking.html" class="btn btn-accent">Book Now</a>
+                <button class="btn btn-outline-secondary">View Details</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Studio Set 5 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card shadow-sm border-0 h-100">
+            <img src="https://i.pinimg.com/736x/c6/83/a4/c683a43d034509989c5a53c5ad9a7758.jpg" alt="Color Background" class="card-img-top rounded-top">
+            <div class="card-body text-center">
+              <h5 class="mb-1">Color Background</h5>
+              <p class="text-muted small mb-3">Backdrop + props + lighting kit (1 set).</p>
+              <div class="d-grid gap-2">
+                <a href="booking.html" class="btn btn-accent">Book Now</a>
+                <button class="btn btn-outline-secondary">View Details</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Studio Set 6 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card shadow-sm border-0 h-100">
+            <img src="https://i.pinimg.com/1200x/70/e0/cf/70e0cffc81a89a4727f25beb7b335d4f.jpg" alt="Classic Background" class="card-img-top rounded-top">
+            <div class="card-body text-center">
+              <h5 class="mb-1">Classic Background</h5>
+              <p class="text-muted small mb-3">Backdrop + props + lighting kit (1 set).</p>
+              <div class="d-grid gap-2">
+                <a href="booking.html" class="btn btn-accent">Book Now</a>
+                <button class="btn btn-outline-secondary">View Details</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <!-- 🌿 Footer -->
+  <footer>
+    <p class="mb-0">© 2025 Potret Studio — Crafted with light & heart.</p>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    (function () {
+      // Helper: show element, hide element
+      const show = el => el && (el.style.display = '');
+      const hide = el => el && (el.style.display = 'none');
+
+      const cameraSection = document.getElementById('camera');
+      const studioSection = document.getElementById('studio');
+      const singleControls = document.getElementById('singleControls');
+      const singleBadge = document.getElementById('singleBadge');
+      const showAllBtn = document.getElementById('showAllBtn');
+
+      function showAllCollections() {
+        show(cameraSection); show(studioSection);
+        hide(singleControls);
+        // remove hash without reloading (history API)
+        history.replaceState(null, '', 'gallery.html');
+        // scroll to top of gallery
+        window.scrollTo({ top: document.querySelector('.page-header').offsetTop - 60, behavior: 'smooth' });
+      }
+
+      function showSingle(id) {
+        if (id === 'camera') {
+          show(cameraSection); hide(studioSection);
+          singleBadge.textContent = 'Camera Collection';
+        } else if (id === 'studio') {
+          show(studioSection); hide(cameraSection);
+          singleBadge.textContent = 'Photo Studio Collection';
+        } else {
+          // fallback: show all
+          showAllCollections();
+          return;
+        }
+        show(singleControls);
+        // scroll to the visible section smoothly
+        const target = document.getElementById(id);
+        setTimeout(() => {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 80);
+      }
+
+      // Wire button: "Show all collections"
+      showAllBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        showAllCollections();
+      });
+
+      // On load: check hash
+      function handleInitialHash() {
+        const hash = location.hash ? location.hash.replace('#','') : '';
+        if (hash === 'camera' || hash === 'studio') {
+          showSingle(hash);
+        } else {
+          // no hash or unknown hash -> show all
+          showAllCollections();
+        }
+      }
+
+      // Listen to hashchange (in case user navigates browser back/forward)
+      window.addEventListener('hashchange', () => {
+        const hash = location.hash ? location.hash.replace('#','') : '';
+        if (hash === 'camera' || hash === 'studio') showSingle(hash);
+        else showAllCollections();
+      });
+
+      // run on DOM ready
+      document.addEventListener('DOMContentLoaded', handleInitialHash);
+    })();
+  </script>
+</body>
+</html>
